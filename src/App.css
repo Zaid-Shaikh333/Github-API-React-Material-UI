@@ -21,3 +21,10 @@
   padding: .2rem;
   font-family:'Courier New', Courier, monospace;
 }
+.nav i{
+  font-size: 2rem;
+}
+.custom-nav{
+  float : right;
+  display : flex;
+}

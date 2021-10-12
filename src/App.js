@@ -1,14 +1,13 @@
 //import logo from './logo.svg';
 import './App.css';
 import './components/readRepos';
-import { Repos } from './components/readRepos';
-import { Create} from './components/createRepo';
+
+import { Home } from './components/home';
 
 function App() {
   return (
     <div className="App">
-      <Create/>
-      <Repos/>
+      <Home/>
     </div>
   );
 }

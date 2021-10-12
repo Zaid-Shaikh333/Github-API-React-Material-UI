@@ -5,19 +5,32 @@ import axios from 'axios';
 
 
 export const Create = () => {
-    const [ dev , setDev] = useState();
+    const [ desc , setDesc] = useState();
     const [ name, setName] = useState();
     const [ token, setToken] = useState();
     //const [ description, setDescription] = useState();
     const [ privacy, setPrivacy] = useState(false);
     const [ status, setStatus] = useState(false)
 
+    const config = {
+        headers : { Authorization : `Bearer ${token}` }
+    }
+     const body = {
+         "name" : name,
+         "description" : desc,
+         "private" : privacy
+     }
     const handleCreateRepository = () => {
+        
         setStatus(true)
-        axios.post(`https://api.github.com/user/<${dev}>/repos?access_token=<${token}>`,{
-            "name" : name
+        axios.post(`https://api.github.com/user/repos`,
+        body,
+        config
+        ).then((response) => {
+            setStatus(false)
+            console.log(response)
+            alert(`Repository Named ${name} is Created Successfully`)
         })
-        setStatus(false)
     }
 
     return(
@@ -26,16 +39,16 @@ export const Create = () => {
                 <h3>Create Github Repository</h3>
                 <div className="crud-form-field">
                     <Grid>
-                        <TextField variant="standard" label="User Name" required 
-                        onChange={(event) => setDev(event.target.value)}
+                        <TextField variant="standard" label="Repo Name" required 
+                        onChange={(event) => setName(event.target.value)}
                         />
                     </Grid>
                 </div>
 
                 <div className="crud-form-field">
                     <Grid>
-                        <TextField variant="standard" label="Repo Name" required 
-                        onChange={(event) => setName(event.target.value)}
+                        <TextField variant="standard" label="Description" required 
+                        onChange={(event) => setDesc(event.target.value)}
                         />
                     </Grid>
                 </div>
@@ -51,7 +64,7 @@ export const Create = () => {
                 <Grid>
                     <p className="terms">
                         <Switch
-                            color="success"
+                            color="secondary"
                             size="medium"
                             inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} required
                             onChange={(event) => setPrivacy(!privacy)}
@@ -62,7 +75,7 @@ export const Create = () => {
 
                 <div className="crud-form-field">
                     <Grid>
-                        <Button variant="contained" color="secondary" size="small" onClick={handleCreateRepository}>{status ? "Creating..." : "Create"}</Button>
+                        <Button variant="contained" color="primary" size="small" onClick={handleCreateRepository}>{status ? "Creating..." : "Create"}</Button>
                     </Grid>
                 </div>
             </form>
