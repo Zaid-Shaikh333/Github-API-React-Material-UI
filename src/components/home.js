@@ -3,13 +3,13 @@ import { Button, AppBar, Box, Toolbar } from '@mui/material';
 import { Repos } from './readRepos';
 import { Create } from './createRepo';
 import { NotFound } from './NotFound';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import "../App.css";
 
 export const Home = () => {
 
     return (
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
             <div className="mt-2 mx-2">
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar position="static">
