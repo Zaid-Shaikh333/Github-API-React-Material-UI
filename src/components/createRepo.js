@@ -30,6 +30,9 @@ export const Create = () => {
             setStatus(false)
             console.log(response)
             alert(`Repository Named ${name} is Created Successfully`)
+        }).catch((e) => {
+            setStatus(false)
+            alert(`Error Creating Repository. Repo either Exists or Wrong naming.`)
         })
     }
 
