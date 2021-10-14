@@ -3,7 +3,7 @@ import { Button, AppBar, Box, Toolbar } from '@mui/material';
 import { Repos } from './readRepos';
 import { Create } from './createRepo';
 //import { NotFound } from './NotFound';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import "../App.css";
 
 export const Home = () => {
