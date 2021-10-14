@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, AppBar, Box, Toolbar } from '@mui/material';
 import { Repos } from './readRepos';
 import { Create } from './createRepo';
-import { NotFound } from './NotFound';
+//import { NotFound } from './NotFound';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import "../App.css";
 
@@ -42,7 +42,7 @@ export const Home = () => {
             </div>
             <Route path="/create" component={Create} exact />
             <Route path="/read" component={Repos} exact />
-            <Route status={404} component={NotFound}/>
+            
         </Router>
     )
 }
