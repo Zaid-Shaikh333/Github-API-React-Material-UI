@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Live Link to the Project: https://62eac3cbfd999100a06cd3ab--musical-zuccutto-184859.netlify.app/create
+Live Link to the Project: https://62eac3cbfd999100a06cd3ab--musical-zuccutto-184859.netlify.app/
 
 ## Available Scripts
 
